@@ -2,3 +2,5 @@ requests
 validators
 pyinstaller
 tk
+setuptools
+wheel
