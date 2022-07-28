@@ -2,8 +2,8 @@ image: ubuntu:18.04
 
 before_script:
   - apt update && apt install -y python3-pip
-  - pip install -r requirements.txt
-  - pip install pyinstaller
+  - pip3 install -r requirements.txt
+  - pip3 install pyinstaller
 
 cache:
  paths:
