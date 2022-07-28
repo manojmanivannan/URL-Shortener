@@ -1,0 +1,29 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.7'
+      # Install Dependencies
+      - name: Install Dependencies
+        run: pip install -r requirements.txt && pip install pyinstaller
+      # Build package
+      - name: Build package
+        run: pyinstaller main.py -w --onefile
+      - name: Archive package
+        uses: actions/upload-artifact@v3
+        with:
+          name: package-windows-linux
+          path: dist

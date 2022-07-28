@@ -1,0 +1,26 @@
+image: ubuntu:18.04
+
+before_script:
+  - pip install -r requirements.txt
+  - pip install pyinstaller
+
+cache:
+ paths:
+   - dist/
+
+stages:
+  - build
+
+
+.BuildPackage:
+  stage: build
+  artifacts:
+    paths:
+      - dist/main
+    expire_in: 1 week
+
+buildPush:
+  extends: .BuildPackage
+  script:
+      - pyinstaller main.py -w --onefile
+
