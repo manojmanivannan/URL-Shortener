@@ -1,7 +1,7 @@
 image: python:3.7-slim
 
 before_script:
-  - apt update && apt install -y python3-pip python3-venv setuptools wheel
+  - apt update && apt install -y python3-pip python3-venv
 
 cache:
  paths:
@@ -21,6 +21,6 @@ stages:
 Package:
   extends: .BuildPackage
   script:
-      - python3 -m venv venv && . ./venv/bin/activate && pip3 install -r requirements.txt
+      - python3 -m venv venv && . ./venv/bin/activate && pip3 install -r requirements.txt && pip3 install setuptools wheel
       - pyinstaller main.py -w --onefile
 
