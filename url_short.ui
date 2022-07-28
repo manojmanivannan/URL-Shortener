@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="tk.Toplevel" id="main_window">
+    <property name="background">#0080ff</property>
+    <property name="geometry">800x480</property>
+    <property name="height">200</property>
+    <property name="overrideredirect">False</property>
+    <property name="resizable">none</property>
+    <property name="title" translatable="yes">URL Shortner</property>
+    <property name="width">200</property>
+    <child>
+      <object class="tk.Frame" id="main_frame">
+        <property name="background">#0080ff</property>
+        <property name="height">480</property>
+        <property name="width">800</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="tk.Label" id="lbl_app_name">
+            <property name="background">#0080ff</property>
+            <property name="font">{Arial Narrow} 24 {bold}</property>
+            <property name="foreground">#ffffff</property>
+            <property name="text" translatable="yes">URL Shortner</property>
+            <layout manager="pack">
+              <property name="pady">30</property>
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entry1">
+            <property name="font">{Berlin Sans FB} 12 {}</property>
+            <property name="justify">center</property>
+            <property name="relief">groove</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Enter a URL</property>
+            <property name="textvariable">string:long_url</property>
+            <property name="validate">none</property>
+            <property name="width">70</property>
+            <layout manager="pack">
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="btn_shorten">
+            <property cbtype="simple" name="command" type="command">make_short_link</property>
+            <property name="font">{Britannic Bold} 12 {}</property>
+            <property name="foreground">#0080ff</property>
+            <property name="takefocus">false</property>
+            <property name="text" translatable="yes">Generate short URL</property>
+            <layout manager="pack">
+              <property name="pady">100</property>
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="short_url">
+            <property name="background">#0080ff</property>
+            <property name="borderwidth">0</property>
+            <property name="font">{Arial Baltic} 12 {}</property>
+            <property name="justify">center</property>
+            <property name="readonlybackground">#0080ff</property>
+            <property name="state">readonly</property>
+            <property name="validate">all</property>
+            <property name="width">50</property>
+            <layout manager="pack">
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
