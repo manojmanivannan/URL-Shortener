@@ -1,6 +1,7 @@
 image: ubuntu:18.04
 
 before_script:
+  - apt update && apt install python3-pip
   - pip install -r requirements.txt
   - pip install pyinstaller
 
@@ -19,7 +20,7 @@ stages:
       - dist/main
     expire_in: 1 week
 
-buildPush:
+Package:
   extends: .BuildPackage
   script:
       - pyinstaller main.py -w --onefile
