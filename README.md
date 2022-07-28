@@ -25,3 +25,6 @@ You need pyinstaller library for this. Install using `pip install pyinstaller`
 For windows:
 - `pyinstaller main.py -w --onefile` 
 you will find the exe file inside the dist folder that was created. You can share this exe file to anyone running windows
+
+##### UI
+The UI was actual built using `pygubu-designer`, which is an application and it can be installed using `pip install pygubu-designer`
