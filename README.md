@@ -17,13 +17,13 @@ b. `. venv/scripts/activate` for linux
 3. Install dependencies by `pip install -r requirements.txt`
 
 #### Running the application
-simply `python main.py` will start the app
+simply `python URL-shortener.py` will start the app
 
 
 #### Package the app
 You need pyinstaller library for this. Install using `pip install pyinstaller`
 For windows:
-- `pyinstaller main.py -w --onefile` 
+- `pyinstaller URL-shortener.py -w --onefile` 
 you will find the exe file inside the dist folder that was created. You can share this exe file to anyone running windows
 
 ##### UI

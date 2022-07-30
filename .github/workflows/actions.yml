@@ -21,7 +21,7 @@ jobs:
         run: pip install -r requirements.txt && pip install pyinstaller
       # Build package
       - name: Build package
-        run: pyinstaller main.py -w --onefile
+        run: pyinstaller URL-shortener.py -w --onefile
       - name: Archive package
         uses: actions/upload-artifact@v3
         with:
