@@ -33,14 +33,20 @@ class UrlShortApp:
         self.entry1.pack(side="top")
         self.btn_shorten = tk.Button(self.main_frame)
         self.btn_shorten.configure(
+            activeforeground="#e1031e",
+            background="#ebebeb",
+            cursor="hand2",
             font="{Britannic Bold} 12 {}",
             foreground="#0080ff",
-            takefocus=False,
-            text="Generate short URL",
+        )
+        self.btn_shorten.configure(
+            relief="flat", takefocus=True, text="Generate short URL"
         )
         self.btn_shorten.pack(pady=100, side="top")
         self.btn_shorten.configure(command=self.make_short_link)
         self.output_short_url = tk.StringVar()
+        self.btn_shorten.bind("<Enter>", self.on_enter, add="")
+        self.btn_shorten.bind("<Leave>", self.on_leave, add="")
         self.short_url = tk.Entry(self.main_frame)
         self.short_url.configure(
             background="#0080ff",
@@ -65,6 +71,12 @@ class UrlShortApp:
 
     def run(self):
         self.mainwindow.mainloop()
+
+    def on_enter(self, event=None):
+        self.btn_shorten["background"]="#ffffff"
+
+    def on_leave(self, event=None):
+        self.btn_shorten["background"]="#ebebeb"
 
     def make_short_link(self):
 

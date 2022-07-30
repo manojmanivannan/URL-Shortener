@@ -45,11 +45,16 @@
         </child>
         <child>
           <object class="tk.Button" id="btn_shorten">
+            <property name="activeforeground">#e1031e</property>
             <property cbtype="simple" name="command" type="command">make_short_link</property>
+            <property name="cursor">hand2</property>
             <property name="font">{Britannic Bold} 12 {}</property>
             <property name="foreground">#0080ff</property>
-            <property name="takefocus">false</property>
+            <property name="relief">flat</property>
+            <property name="takefocus">true</property>
             <property name="text" translatable="yes">Generate short URL</property>
+            <bind add="" handler="on_enter" sequence="&lt;Enter&gt;" />
+            <bind add="" handler="on_leave" sequence="&lt;Leave&gt;" />
             <layout manager="pack">
               <property name="pady">100</property>
               <property name="side">top</property>
